@@ -15,9 +15,9 @@ RUN apt-get install -y libgd-dev
 RUN apt-get install -y libxslt-dev
 
 # openssl
-ENV MODULES_PATH="/ngx/modules"
-RUN mkdir -p $MODULES_PATH
-WORKDIR  $MODULES_PATH
+ENV OPENSSL_PATH="/ngx/modules"
+RUN mkdir -p $OPENSSL_PATH
+WORKDIR  $OPENSSL_PATH
 
 # QuicTLS is one of the recommended SSL libraries with QUIC support (https://nginx.org/en/docs/quic.html)
 # We have stable backup version of quictls/openssl
@@ -49,7 +49,7 @@ WORKDIR /${NGINX_PATH}/nginx-${NGINX_VERSION}
 
 
 RUN ./configure \
-  --with-openssl="$MODULES_PATH/openssl/" \
+  --with-openssl="$OPENSSL_PATH/openssl/" \
   --prefix=/etc/nginx \
   --sbin-path=/usr/sbin/nginx \
   --modules-path=/usr/lib/nginx/modules \

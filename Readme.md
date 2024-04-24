@@ -1,4 +1,4 @@
-# Nginx docker image
+# Nginx + HTTP3 docker image
 
 This is a project that contains the source code for the [webpanorg/nginx](https://hub.docker.com/r/webpanorg/nginx) image. It includes the original Dockerfile for building nginx with additional modules.
 The Dockerfile includes a build of nginx with support for http3.
